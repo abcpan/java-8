@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8954770-b0a1-4a1a-89e0-ad900a78010f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.hidden.text" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java_8.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/abc/test/FunctionReference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/abc/test/lambda/BufferReaderProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/abc/test/lambda/Test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/abc/test/lambda/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/abc/test/stream/FunctionReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.hidden.text" beforeDir="false" afterPath="$PROJECT_DIR$/.hidden" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abc/test/FunctionReference.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -47,13 +47,39 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Test2">
     <configuration name="FunctionReference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.abc.test.FunctionReference" />
+      <option name="MAIN_CLASS_NAME" value="com.abc.test.stream.FunctionReference" />
       <module name="java_8" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.abc.test.*" />
+          <option name="PATTERN" value="com.abc.test.stream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abc.test.lambda.Test1" />
+      <module name="java_8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.abc.test.lambda.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abc.test.lambda.Test2" />
+      <module name="java_8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.abc.test.lambda.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -63,6 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test2" />
+        <item itemvalue="Application.Test1" />
         <item itemvalue="Application.FunctionReference" />
       </list>
     </recent_temporary>
@@ -77,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577329232265</updated>
-      <workItem from="1577329238007" duration="534000" />
+      <workItem from="1577329238007" duration="7217000" />
     </task>
     <servers />
   </component>
