@@ -33,10 +33,10 @@ public class Test2 {
     return newList;
   }
 
-  static interface Predicate<T>{
+   interface Predicate<T>{
     void accept(T t);
   }
-  static interface Function<T,R>{
+   interface Function<T,R>{
     R apply(T data);
   }
 }

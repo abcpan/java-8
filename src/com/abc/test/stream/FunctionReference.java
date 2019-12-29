@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.LongStream;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * @author abcpan
@@ -17,7 +20,9 @@ import java.util.stream.Collectors;
 public class FunctionReference {
   public static void main(String[] args){
    // functionReference();
-    parallelStreamTest();
+    //parallelStreamTest();
+    testCollectors();
+    testParallelStreamPerformance();
   }
   public static void functionReference(){
     File[] hiddenFiles = new File(".").listFiles(File::isHidden);
@@ -26,6 +31,9 @@ public class FunctionReference {
     }
   }
 
+  /**
+   * 测试普通流
+   */
   public static void parallelStreamTest(){
     //定义颜色map
     HashMap<Integer,String> colorMap = new HashMap<>();
@@ -53,7 +61,28 @@ public class FunctionReference {
     System.out.println("======================================>");
     apples.parallelStream().forEach(apple-> System.out.println(apple.getColor()));
   }
+  public static void testCollectors(){
+    List<Dish> dishes = new ArrayList<>();
+    for(int i =0;i<20;i++){
+      Dish dish = new Dish();
+      dish.setType("meate");
+      dish.setCalories(200*i);
+      dishes.add(dish);
+    }
+    for(int i =0;i<20;i++){
+      Dish dish = new Dish();
+      dish.setType("vegetable");
+      dish.setCalories(100*i);
+      dishes.add(dish);
+    }
 
+    dishes.parallelStream().collect(Collectors.groupingBy(dish->dish.getType(),toList())).forEach((key,value)-> System.out.println(value.size()));
+  }
+
+  public static void testParallelStreamPerformance(){
+    long result = LongStream.range(1,1001).parallel().reduce(0,(a,b)->a+b);
+    System.out.println(result);
+  }
   static class Apple{
     private String color;
     private Integer weight;
@@ -77,4 +106,6 @@ public class FunctionReference {
       this.weight = weight;
     }
   }
+
+
 }
