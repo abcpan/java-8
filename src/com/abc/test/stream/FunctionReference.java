@@ -59,7 +59,11 @@ public class FunctionReference {
     //普通流
     apples.stream().forEach(apple-> System.out.println(apple.getColor()));
     System.out.println("======================================>");
-    apples.parallelStream().forEach(apple-> System.out.println(apple.getColor()));
+    apples.parallelStream().forEach(System.out::println);
+     List<String> names = apples.stream().map(Apple::getColor).collect(Collectors.toList());
+     for(String name:names){
+       System.out.println(name);
+     }
   }
   public static void testCollectors(){
     List<Dish> dishes = new ArrayList<>();
