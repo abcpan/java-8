@@ -1,7 +1,4 @@
 package com.abc.test.async;
-
-import com.sun.org.apache.xerces.internal.impl.dv.xs.DoubleDV;
-
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;

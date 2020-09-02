@@ -15,7 +15,7 @@ public class Test1 {
       System.out.println(reader.readLine());
     });
   }
-  public static void readText(FileReader targetFile,BufferReaderProcessor processor){
+  public static void readText(FileReader targetFile, BufferReaderProcessor processor){
     try(
         BufferedReader reader = new BufferedReader(targetFile)
         ){

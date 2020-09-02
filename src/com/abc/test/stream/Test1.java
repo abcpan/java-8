@@ -1,6 +1,7 @@
 package com.abc.test.stream;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -14,8 +15,12 @@ public class Test1 {
     //testPrimitive();
     //textRange();
     //genTernary();
-    buildStream();
-    genFib();
+    //buildStream();
+    //genFib();
+    //printDistinct();
+    //testMap();
+    //testFindAny();
+    testReduce();
   }
   public static void testPrimitive(){
     int[] numbers = {1,2,3,4,5,3,8,9,10};
@@ -43,8 +48,50 @@ public class Test1 {
     Stream<String> strStream = Stream.of("java8","lambda","in","action");
     strStream.map(String::toUpperCase).forEach(System.out::println);
   }
-
+  
+  /**
+   * 产生斐波拉契
+   */
   public static void genFib(){
     Stream.iterate(new int[]{0,1},t->new int[]{t[1],t[0]+t[1]}).limit(10).map(t->t[0]).forEach(System.out::println);
+  }
+  
+  /**
+   * 测试distinct
+   */
+  public static void printDistinct() {
+    List<Integer> numbers = Arrays.asList(1, 2, 3, 1, 3, 3, 4, 5, 9, 8, 8);
+    numbers.stream().filter(i -> i % 2 == 0).distinct().forEach(System.out::println);
+  }
+  
+  public static void testMap() {
+    List<String> list = Arrays.asList("Modern", "Java", "In", "Action");
+    List<Map<String, Integer>> strLenMap = list.stream().map((str) -> {
+      Map<String, Integer> map = new HashMap<>();
+      map.put(str, str.length());
+      return map;
+    }).collect(Collectors.toList());
+  
+    System.out.println(strLenMap);
+  }
+  
+  /**
+   * 测试findAny or findFirst
+   */
+  public static void testFindAny() {
+    List<String> list = Arrays.asList("Modern", "Java", "In", "Action");
+    Optional<String> ret = list.stream().filter(str -> str.length() > 100).findAny();
+    ret.ifPresent(result -> {
+      System.out.println(result);
+    });
+    String target = ret.orElse("未知");
+    System.out.println(target);
+  }
+  
+  public static void testReduce() {
+    List<String> list = Arrays.asList("Modern", "Java", "In", "Action");
+    StringBuilder stb = new StringBuilder();
+    String ret = list.stream().reduce("", (a, b) ->  a + b);
+    System.out.println(ret);
   }
 }

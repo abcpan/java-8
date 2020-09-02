@@ -7,4 +7,5 @@ public interface ValidationStrategy {
      * @return
      */
     boolean execute(String s);
+
 }

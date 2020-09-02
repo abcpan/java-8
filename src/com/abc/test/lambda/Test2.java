@@ -1,5 +1,7 @@
 package com.abc.test.lambda;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +19,8 @@ public class Test2 {
       System.out.println(item);
     });
   }
-  public static <T> void forEach(List<T> list, Predicate<T> predicate){
+  public static <T> void forEach(@NotNull List<T> list, Predicate<T> predicate){
+
     for(T item:list){
       predicate.accept(item);
     }

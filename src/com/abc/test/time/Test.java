@@ -1,12 +1,7 @@
 package com.abc.test.time;
-
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.concurrent.TimeUnit;
-
 /**
  * @version v1.0
  * @ProjectName: java-8
